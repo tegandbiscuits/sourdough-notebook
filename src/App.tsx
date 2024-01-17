@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <a
-          className="App-link"
+          className="btn btn-primary"
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
