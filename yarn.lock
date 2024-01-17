@@ -2949,13 +2949,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^16.7.13":
-  version: 16.18.71
-  resolution: "@types/node@npm:16.18.71"
-  checksum: e38197aa43bf282825594e2652236b63d3225c3fed70438143b0f59b8abadb04e197a1b9bbc0d98c65fddff1d22ee38565826499feca67c1b1b901f18c00a047
-  languageName: node
-  linkType: hard
-
 "@types/parse-json@npm:^4.0.0":
   version: 4.0.2
   resolution: "@types/parse-json@npm:4.0.2"
@@ -12054,7 +12047,6 @@ __metadata:
     "@testing-library/user-event": "npm:^14.5.2"
     "@types/eslint": "npm:^8"
     "@types/jest": "npm:^29.5.11"
-    "@types/node": "npm:^16.7.13"
     "@types/react": "npm:^18.0.0"
     "@types/react-dom": "npm:^18.0.0"
     "@typescript-eslint/eslint-plugin": "npm:^6.0.0"
