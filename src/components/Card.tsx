@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 
 type CardProps = React.HTMLAttributes<HTMLDivElement> & {
-  variant?: 'primary';
+  variant?: 'primary' | 'info';
 };
 
 function Card({
@@ -14,6 +14,7 @@ function Card({
     'card card-compact shadow-xl',
     {
       'bg-primary text-primary-content': variant === 'primary',
+      'bg-info text-info-content': variant === 'info',
     },
     className,
   );
