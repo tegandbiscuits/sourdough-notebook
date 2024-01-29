@@ -1,33 +1,41 @@
 import React, { useRef } from 'react';
-import type { AriaNumberFieldProps } from 'react-aria';
-import { useLocale, useNumberField } from 'react-aria';
-import { useNumberFieldState } from 'react-stately';
+import type { AriaTextFieldProps } from 'react-aria';
+import { useTextField } from 'react-aria';
 import classNames from 'classnames';
 
-function NumberField(props: AriaNumberFieldProps) {
-  const { label } = props;
-  const { locale } = useLocale();
-  const state = useNumberFieldState({ ...props, locale });
+function TextField(props: AriaTextFieldProps) {
+  const { label, description } = props;
   const inputRef = useRef(null);
   const {
     labelProps,
     inputProps,
-    isInvalid,
+    descriptionProps,
     errorMessageProps,
+    isInvalid,
     validationErrors,
-  } = useNumberField(props, state, inputRef);
+  } = useTextField(props, inputRef);
 
   return (
     // eslint-disable-next-line jsx-a11y/label-has-associated-control
-    <label className="form-control">
+    <label
+      // eslint-disable-next-line react/jsx-props-no-spreading
+      {...labelProps}
+      className="form-control"
+    >
       <div className="label">
-        <span
-          // eslint-disable-next-line react/jsx-props-no-spreading
-          {...labelProps}
-          className={classNames(labelProps.className, 'label-text')}
-        >
+        <span className={classNames(labelProps.className, 'label-text')}>
           {label}
         </span>
+
+        {description && (
+          <span
+            // eslint-disable-next-line react/jsx-props-no-spreading
+            {...descriptionProps}
+            className={classNames(descriptionProps.className, 'label-text-alt')}
+          >
+            {description}
+          </span>
+        )}
       </div>
 
       <input
@@ -56,4 +64,4 @@ function NumberField(props: AriaNumberFieldProps) {
   );
 }
 
-export default NumberField;
+export default TextField;
